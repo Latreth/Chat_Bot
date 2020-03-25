@@ -1,0 +1,58 @@
+{% extends "chatbotapp/base.html" %}
+{% load static %}
+{% block body %}
+<!doctype html>
+<html lang = "en">
+   <head>
+      <meta charset = "utf-8">
+      <title>jQuery UI Dialog functionality</title>
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+   <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{% static 'chatbotapp/css/style.css' %}">
+      
+      
+      <!-- Javascript -->
+      <script>
+         $(function() {
+            $( "#dialog-1" ).dialog({
+               autoOpen: false,  
+            });
+            $( "#opener" ).click(function() {
+               $( "#dialog-1" ).dialog( "open" );
+            });
+         });
+
+
+
+    
+
+      </script>
+   </head>
+   
+   <body>
+      <!-- HTML --> 
+   <div id="dialog-1">
+    <div class="chatbot_window">
+      <div class="chatbot_header">
+        <p>Chatbot ECL</p>
+      </div>
+      <div class="chatbot_body">
+      </div>
+      <div class="chatbot_input">
+              <input name="usermsg" type="text" id="usermsg" style="width:350px" />
+              <input name="submitmsg" type="submit"  id="submitmsg" value="Send" style="width:70px;" />
+      </div>
+    </div>
+ </div>
+      <div class="chatbot" id ="opener">
+      <img src="{% static 'chatbotapp/images/question.svg' %}" ></div>
+
+
+   </body>
+
+{% endblock body %}
+
+
+</html>

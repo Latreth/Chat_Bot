@@ -9,11 +9,26 @@
     <link rel="stylesheet" href="{% static 'chatbotapp/css/jquery.fancybox.min.css' %}">
     <link rel="stylesheet" href="{% static 'chatbotapp/fonts/icomoon/style.css' %}">
     <link rel="stylesheet" href="{% static 'chatbotapp/fonts/line-icons/style.css' %}">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{% static 'chatbotapp/css/style.css' %}">
 
-      
+
+<script>
+  $(function () {
+    $("#dialog").dialog({
+      autoOpen: false,
+      modal: true
+    });
+    $("#abrir")
+    .button()
+    .click(function () {
+    $("#dialog").dialog("open");
+    });
+  });
+</script>      
 
 
   </head>
@@ -26,7 +41,11 @@
     </div>
   </div>
 
-  
+Diálogo:
+<div id="dialog" title="Dialogo básico">
+<p>Diálogo básico modal. Puede ser movido, redimensionado y cerrado haciendo clic sobre el botón 'X'.</p>
+</div>
+<button id="abrir">Abrir diálogo</button>
 
 <div class="site-wrap">
 
@@ -52,22 +71,6 @@
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-lg-block">
               <li><a href="index.html" class="nav-link active">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li class="has-children">
-                <a href="services.html">Pages</a>
-                <ul class="dropdown">
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="service-single.html">Service Single</a></li>
-                  <li><a href="blog-single.html">Blog Single</a></li>
-                  <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                  <li><a href="testimonials.html">Testimonials</a></li>
-                  <li><a href="faq.html">Frequently Ask Questions</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-              </li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
           
@@ -234,6 +237,10 @@
   </div>
 
     <!-- SCRIPTS -->
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    
     <script src="{% static 'chatbotapp/js/jquery.min.js' %}"></script>
     <script src="{% static 'chatbotapp/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'chatbotapp/js/isotope.pkgd.min.js' %}"></script>
@@ -250,5 +257,8 @@
     <script src="{% static 'chatbotapp/js/jquery.jquery-ui.min.js' %}"></script>
     
     <script src="{% static 'chatbotapp/js/custom.js' %}"></script>
+
+
+
   </body>
 </html>
